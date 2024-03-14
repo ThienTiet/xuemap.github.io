@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>地图显示</title>
+    <!--一、引入资源-->
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+          securityJsCode: "f221947ec828c09d6f36360da8e0f0b8",
+        };
+      </script>
+      
+      <script src="https://webapi.amap.com/maps?v=2.0&key=7cadbe29ea72567d1bbd21d3fd188ffc"></script>
+      <script type="text/javascript">
+        AMapLoader.load({
+          key: "7cadbe29ea72567d1bbd21d3fd188ffc", //申请好的Web端开发者key，调用 load 时必填
+          version: "2.0", //指定要加载的 JS API 的版本，缺省时默认为 1.4.15
+        })
+          .then((AMap) => {
+            //JS API 加载完成后获取AMap对象
+          })
+          .catch((e) => {
+            console.error(e); //加载错误提示
+          });
+      </script>
+    <!--设置样式-->
+    <style>
+        #container {
+  width: 1500px;
+  height: 800px;
+} 
+    </style>
+    
+    
+</head>
+<body>
+    <!--创建容器-->
+    <div id="container"></div>
+    
+    <!--加载-->
+    
+    <script>const map = new AMap.Map("container", {
+      viewMode: '2D', //默认使用 2D 模式
+      zoom: 15, //地图级别
+      center: [125.298757,43.881348], //地图中心点
+    });</script>
+   
+</body>
+</html>
